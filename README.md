@@ -1,16 +1,15 @@
-### Hi there 👋
+<a align="right"> <img src="https://komarev.com/ghpvc/?username=viriatonova&label=Profile%20views&color=e28da7&style=flat" alt="ariadne-thread" /> </a>
 
-<!--
-**viriatonova/viriatonova** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+###  Hey! I'am Viriato Nova 👋
 
-Here are some ideas to get you started:
+I'm a software engineer from Brasil. 🇧🇷
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I have been working as a Full Stack developer and Quality Enginer, in Brasil 🇧🇷, Portugal 🇵🇹 and EUA 🇺🇸
+
+Currently, I am expanding my horizons by immersing myself in the fields of Machine Learning, Data Science, and Artificial Intelligence.
+
+<div>
+  <a href="https://github.com/viriatonova">
+  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=viriatonova&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&langs_count=7&theme=tokyonight"/>
+</div>
