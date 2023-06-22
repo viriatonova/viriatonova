@@ -4,7 +4,7 @@
 
 I'm a software engineer from Brasil. 🇧🇷
 
-I have been working as a Full Stack developer and Quality Enginer, in Brasil 🇧🇷, Portugal 🇵🇹 and EUA 🇺🇸
+I have been working as a Full Stack developer and Quality Engineer, in Brasil 🇧🇷, Portugal 🇵🇹 and EUA 🇺🇸
 
 Currently, I am expanding my horizons by immersing myself in the fields of Machine Learning, Data Science, and Artificial Intelligence.
 
