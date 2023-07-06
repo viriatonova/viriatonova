@@ -10,7 +10,7 @@ Currently, I am expanding my horizons by immersing myself in the fields of Machi
 
 <div>
   <a href="https://github.com/viriatonova">
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=viriatonova&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&langs_count=7&theme=tokyonight"/>
+  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=viriatonova&show_icons=true&theme=onedark&count_private=true"/>
+  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&langs_count=7&theme=onedark"/>
 </div>
-[Viriato Nova Satatus](https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&langs_count=5&theme=tokyonight&show_icons=true)
+    
