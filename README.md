@@ -1,4 +1,4 @@
-<a align="right"> <img src="https://komarev.com/ghpvc/?username=viriatonova&label=Profile%20views&color=e28da7&style=flat" alt="ariadne-thread" /> </a>
+<a align="right"> <img src="https://komarev.com/ghpvc/?username=viriatonova&label=Profile%20views&color=e28da7&style=flat" alt="show" /> </a>
 
 ###  Hey! I'am Viriato Nova 👋
 
