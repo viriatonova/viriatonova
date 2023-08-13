@@ -17,12 +17,10 @@ const data: any = await getRepositoryCommits(owner, repor, token)
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="px-40">
 		<Header title={SITE_TITLE} />
-		<main class="mt-12 px-32">
-			<h1>
-				{JSON.stringify(data.commits[0])}
-			</h1>
+		<main class="mt-12">
+			
 		</main>
 		<Footer />
 	</body>
