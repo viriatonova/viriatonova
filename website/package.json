@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "css:prod": "npx tailwindcss -o ./src/styles/index.css --minify"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
