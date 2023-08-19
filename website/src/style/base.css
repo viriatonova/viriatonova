@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h2 {
+        @apply font-sans font-semibold text-xl tracking-wider
+    }
+    h4 {
+        @apply font-sans font-medium text-lg tracking-wider 
+    }
+    p {
+        @apply text-sm xl:text-base 2xl:text-xl
+    }
+    a {
+        @apply text-lg hover:underline
+    }
+    ion-icon {
+        @apply h-6 w-6
+    }
+}
+@layer components {
+    .btn{
+        @apply py-1 px-2 flex justify-center items-center 
+        font-semibold border border-amber-950 hover:border-transparent rounded
+        bg-transparent hover:bg-stone-900 text-amber-950 hover:text-amber-300
+    }
+    .btn-social {
+        @apply py-1 px-2 flex justify-center items-center 
+        
+    }
+    .btn-nav {
+        @apply  py-2 px-4 
+    }
+    .input-text{
+        @apply w-full relative
+    }
+    .input-text input{
+        @apply w-full h-8 px-2 border border-amber-950 rounded-md 
+        focus:outline-none focus:shadow-sm focus:ring-2 ring-amber-300
+    }
+}

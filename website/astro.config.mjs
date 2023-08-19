@@ -8,5 +8,11 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://viriatonova.github.io',
   base: '/viriatonova',
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind({
+      applyBaseStyles: false,
+    })
+  ]
 });
