@@ -1,7 +1,8 @@
 ---
-title: 'Encarando a esfinge do mercado de TI'
+number: '4'
+title: 'A varanda de casa é uma escola'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+pubDate: 'Jul 04 2022'
 heroImage: '/img/blog-placeholder-1.jpg'
 serie: '1/2'
 ---

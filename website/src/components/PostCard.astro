@@ -11,14 +11,13 @@ const { post } = Astro.props;
         class="flex justify-start items-center"
         href={`/blog/${post.slug}/`}
     >
-        <header class="w-60 font-mono">
-            <p class="date">
-                <FormattedDate date={post.data.pubDate} />
-            </p>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
+        <header 
+            class="
+                w-12 h-full mr-2 flex items-start 
+                font-mono text-lg
+            "
+        >
+            <p class="h-full">{post.data.number}</p>
         </header>
         <div class="w-full">
             <h3 class="w-full font-bold text-2xl tracking-wider">
@@ -30,5 +29,14 @@ const { post } = Astro.props;
                 <p>ref.:{post.data.serie}</p>
             </ul>
         </div>
+        <footer class="w-40 font-mono">
+            <p class="date">
+                <FormattedDate date={post.data.pubDate} />
+            </p>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+        </footer>
     </a>
 </article>
