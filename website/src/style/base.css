@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=DM+Mono:wght@400;500&family=Noto+Sans+Mono:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+    body {
+        @apply font-sans text-neutral-900
+    }
     h2 {
-        @apply font-sans font-semibold text-xl tracking-wider
-    }
-    h4 {
-        @apply font-sans font-medium text-lg tracking-wider 
-    }
-    p {
-        @apply text-sm xl:text-base 2xl:text-xl
+        @apply font-sans font-semibold text-2xl tracking-wider
     }
     a {
         @apply text-lg hover:underline
     }
-    ion-icon {
+    #icon-social {
         @apply h-6 w-6
+    }
+    #icon-start {
+        @apply h-4 w-4
     }
 }
 @layer components {
@@ -27,7 +29,6 @@
     }
     .btn-social {
         @apply py-1 px-2 flex justify-center items-center 
-        
     }
     .btn-nav {
         @apply  py-2 px-4 
@@ -38,5 +39,12 @@
     .input-text input{
         @apply w-full h-8 px-2 border border-amber-950 rounded-md 
         focus:outline-none focus:shadow-sm focus:ring-2 ring-amber-300
+    }
+    .card-info{
+        @apply w-full flex justify-start items-center font-mono text-sm
+        text-neutral-800 list-none
+    }
+    .card-info li{
+        @apply mr-2 after:content-['_•'] 
     }
 }
