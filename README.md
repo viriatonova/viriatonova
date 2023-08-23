@@ -11,6 +11,6 @@ Currently, I am expanding my horizons by immersing myself in the fields of Machi
 <div>
   <a href="https://github.com/viriatonova">
   <img height="165em" src="https://github-readme-stats.vercel.app/api?username=viriatonova&show_icons=true&theme=dracula&count_private=true"/>
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&langs_count=7&theme=dracula"/>
+  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&theme=dracula&langs_count=7"/>
 </div>
     
