@@ -1,42 +1,51 @@
 ---
-import FormattedDate from '../components/FormattedDate.astro';
-import type { CollectionEntry } from 'astro:content';
+import FormattedDate from "../components/FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
 
-type post = CollectionEntry<'blog'>;
+type post = CollectionEntry<"blog">;
 
 const { post } = Astro.props;
 ---
-<article class="flex justify-start items-center">
-    <a 
-        class="flex justify-start items-center"
+
+<article class="w-full h-full">
+    <a
+        class="w-full h-full flex flex-col justify-end items-start"
         href={`/blog/${post.slug}/`}
     >
-        <header 
-            class="
-                w-12 h-full mr-2 flex items-start 
-                font-mono text-lg
-            "
-        >
-            <p class="h-full">{post.data.number}</p>
-        </header>
-        <div class="w-full">
-            <h3 class="w-full font-bold text-2xl tracking-wider">
-                {post.data.title}
-            </h3>
-            <ul class="card-info">
-                <li>{post.data.description}</li>
-                <li>{post.data.description}</li>
-                <p>ref.:{post.data.serie}</p>
-            </ul>
-        </div>
-        <footer class="w-40 font-mono">
-            <p class="date">
-                <FormattedDate date={post.data.pubDate} />
-            </p>
+        <section class="w-full h-full">
+            <div class="w-full py-2 flex justify-start items-start">
+                <h3 class="w-full font-bold text-2xl tracking-wider">
+                    {post.data.title}
+                </h3>
+            </div>
+            <div class="w-full flex justify-start items-start">
+                <p class="h-full mr-4">{post.data.number}</p>
+                <!-- <ul class="card-info">
+                    <li>{post.data.description}</li>
+                    <p>ref.:{post.data.serie}</p>
+                </ul> -->
+                <p class="w-full text-xl font-mono">
+                    <FormattedDate date={post.data.pubDate} />
+                </p>
+            </div>
+        </section>
+        <footer class="w-full h-full">
+            <div class="w-full">
+                {
+                    post.data.heroImage && (
+                        <img
+                            width={800}
+                            height={400}
+                            src={post.data.heroImage}
+                            alt=""
+                        />
+                    )
+                }
+            </div>
+            <!-- <ion-icon name="star-outline"></ion-icon>
             <ion-icon name="star-outline"></ion-icon>
             <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
-            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon> -->
         </footer>
     </a>
 </article>
