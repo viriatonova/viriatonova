@@ -1,26 +1,39 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@mantine/core/styles.css";
-
-import { ColorSchemeScript, MantineProvider, createTheme, mantineHtmlProps } from "@mantine/core";
-import theme from "@/theme";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { rssUrl, SITE } from "@/config/site";
+import { THEME_SCRIPT } from "@/lib/theme";
+import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
+
+const rss = rssUrl();
 
 export const metadata: Metadata = {
-  title: "Viriato Nova",
-  description: "Publicações, Projetos e Portfólio de Viriato Nova",
+  title: {
+    default: SITE.title,
+    template: `%s · ${SITE.name}`,
+  },
+  description: SITE.description,
+  ...(rss && {
+    alternates: { types: { "application/rss+xml": rss } },
+  }),
 };
-
 
 export default function RootLayout({
   children,
@@ -28,16 +41,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`} {...mantineHtmlProps}>
+    <html
+      lang="pt-BR"
+      // data-theme é aplicado pelo script de tema antes da hidratação
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
-        <ColorSchemeScript suppressHydrationWarning />
+        {/* aplica o tema antes da primeira pintura, sem piscar */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="auto">
+        <div className="shell">
           <Header />
           {children}
-        </MantineProvider>
-
+          <Footer />
+        </div>
       </body>
     </html>
   );

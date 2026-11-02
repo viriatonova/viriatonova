@@ -1,0 +1,45 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs);
+  font-weight: 500;
+  line-height: 1.4;
+  border: 0;
+  border-radius: var(--radius-pill);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.sm {
+  padding: 3px 10px;
+}
+
+.md {
+  padding: 4px 12px;
+  min-height: 30px;
+}
+
+.tecnologia {
+  background: var(--tag-tecnologia);
+}
+
+.trabalho {
+  background: var(--tag-trabalho);
+}
+
+.ideias {
+  background: var(--tag-ideias);
+}
+
+.terra {
+  background: var(--tag-terra);
+}
+
+/* filtro ativo */
+.active {
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--text);
+}

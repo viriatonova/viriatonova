@@ -1,16 +1,16 @@
-<a align="right"> <img src="https://komarev.com/ghpvc/?username=viriatonova&label=Profile%20views&color=e28da7&style=flat" alt="show" /> </a>
+# viriato sampaio
 
-###  Hey! I'am Viriato Nova 👋
+Site pessoal de Viriato Sampaio, engenheiro de software e ensaísta.
 
-I'm a software engineer from Brasil. 🇧🇷
+Os ensaios moram no Substack; o site reúne a página inicial (com os últimos posts via RSS), os projetos e a página sobre.
 
-I have been working as a Full Stack developer and Quality Engineer, in Brasil 🇧🇷, Portugal 🇵🇹 and EUA 🇺🇸
+## Desenvolvimento
 
-Currently, I am expanding my horizons by immersing myself in the fields of Machine Learning, Data Science, and Artificial Intelligence.
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # exporta o site estático em out/
+npm run lint
+```
 
-<div>
-  <a href="https://github.com/viriatonova">
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=viriatonova&show_icons=true&theme=dracula&count_private=true"/>
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=viriatonova&layout=compact&theme=dracula&langs_count=7"/>
-</div>
-    
+Veja [PROJECT.md](PROJECT.md) para stack e sistema visual.

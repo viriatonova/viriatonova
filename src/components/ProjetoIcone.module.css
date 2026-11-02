@@ -1,0 +1,15 @@
+.icon {
+  flex: none;
+}
+
+.placeholder {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  border: 1.5px dashed var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs);
+  color: var(--muted);
+}

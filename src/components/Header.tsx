@@ -1,103 +1,48 @@
 "use client";
 
-import { Group, Title, Anchor, Burger, Drawer, ActionIcon, Stack, Container } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MoonIcon, SunIcon } from "@phosphor-icons/react";
-import { SITE_CONFIG } from "@/config/site";
+import { NAV, SITE } from "@/config/site";
+import { ThemeToggle } from "./ThemeToggle";
+import styles from "./Header.module.css";
+
+function isCurrent(pathname: string, href: string) {
+  return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Header() {
-  const [opened, { toggle, close }] = useDisclosure(false);
-  const { setColorScheme } = useMantineColorScheme();
-  const computedColorScheme = useComputedColorScheme("light", { getInitialValueInEffect: true });
-
-  const toggleColorScheme = () => {
-    setColorScheme(computedColorScheme === "light" ? "dark" : "light");
-  };
-
   const pathname = usePathname();
-
-  const links = [
-    { label: "Blog", href: "/" },
-    { label: "Projetos", href: "#" },
-    { label: "Currículo", href: "#" },
-  ];
-
-  const ThemeIcon = () => (
-    <ActionIcon
-      onClick={toggleColorScheme}
-      variant="default"
-      size="lg"
-      aria-label="Toggle color scheme"
-      visibleFrom="lg"
-    >
-      {computedColorScheme === "dark" ? (
-        <MoonIcon size={SITE_CONFIG.icons.width} />
-      ) : (
-        <SunIcon size={SITE_CONFIG.icons.width} />
-      )}
-    </ActionIcon>
-  );
+  const isHome = pathname === "/";
 
   return (
-    <Container size="lg" pt="xl">
-      <Group justify="space-between" mb="40px" component="header" wrap="nowrap">
-
-        {/* Desktop Menu */}
-        <Group gap="md" visibleFrom="lg">
-          {links.map((link) => (
-            <Anchor
-              key={link.label}
-              component={Link}
-              href={link.href}
-              c={pathname === link.href ? "inherit" : "dimmed"}
-              unstyled
-              fw={500}
-            >
-              {link.label}
-            </Anchor>
-          ))}
-        </Group>
-        <ThemeIcon />
-
-        {/* Mobile Burger */}
-        <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
-
-        {/* Mobile Drawer */}
-        <Drawer
-          opened={opened}
-          onClose={close}
-          size="100%"
-          padding="md"
-          title={<Title order={3}>Navegação</Title>}
-          hiddenFrom="lg"
-          position="right"
-          zIndex={1000000}
-        >
-          <Stack gap="lg" mt="xl">
-            {links.map((link) => (
-              <Anchor
-                key={link.label}
-                component={Link}
-                href={link.href}
-                c={pathname === link.href ? "inherit" : "dimmed"}
-                unstyled
-                fw={500}
-                size="xl"
-                onClick={close}
+    <header className={`${styles.header} ${isHome ? styles.home : ""}`}>
+      {!isHome && (
+        <Link href="/" className={styles.signature}>
+          {SITE.name}
+          <span className="cur" aria-hidden="true">
+            _
+          </span>
+        </Link>
+      )}
+      <div className={styles.bar}>
+        <nav aria-label="principal" className={styles.nav}>
+          {NAV.map(({ label, href }) => {
+            const current = isCurrent(pathname, href);
+            return (
+              <Link
+                key={href}
+                href={href}
+                aria-current={current ? "page" : undefined}
+                className={styles.link}
               >
-                {link.label}
-              </Anchor>
-            ))}
-            <Group justify="space-between" mt="xl" pt="md" style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}>
-              <span style={{ fontWeight: 500, fontSize: "1.1rem" }}>Tema</span>
-              <ThemeIcon />
-            </Group>
-          </Stack>
-        </Drawer>
-      </Group>
-    </Container>
+                {current && "> "}
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
+        <ThemeToggle />
+      </div>
+    </header>
   );
 }

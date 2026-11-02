@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home {
+  gap: 8px 24px;
+  padding: 20px 0;
+}
+
+.signature {
+  padding: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.bar {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.home .bar {
+  justify-content: space-between;
+}
+
+.nav {
+  min-width: 0;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.home .nav {
+  gap: 22px;
+}
+
+.link {
+  padding: 12px 0;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.link:hover,
+.link[aria-current="page"] {
+  color: var(--text);
+}
+
+.link[aria-current="page"] {
+  font-weight: 500;
+}

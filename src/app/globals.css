@@ -1,0 +1,278 @@
+/*
+ * Sistema visual · viriato sampaio · v1
+ * Fonte: design "Site pessoal · Viriato Sampaio" (componentes e tokens).
+ * Sem sombra, sem gradiente. Raio 4px, pílula 999px, borda 1px.
+ */
+
+:root {
+  /* cores vivas: cada uma tem uma função */
+  --color-paper: #faf8f3; /* Papel digital: fundo do modo claro */
+  --color-ink: #14151b; /* Noite: texto no claro, fundo no escuro, texto de tag e grifo */
+  --color-highlight: #ffd23f; /* Ipê: grifo */
+  --color-link-accent: #3d7bff; /* Céu elétrico: sublinhado e anel de foco */
+
+  --tag-tecnologia: #2fd67b; /* Fósforo */
+  --tag-trabalho: #ff5a36; /* Urucum */
+  --tag-ideias: #9b7bff; /* Lilás */
+  --tag-terra: #1e9e6a; /* Mata viva */
+
+  /* tipografia */
+  --font-display: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, Menlo, monospace;
+
+  --text-display: clamp(40px, 5vw, 56px);
+  --text-h1: clamp(32px, 4vw, 44px);
+  --text-h2: 30px;
+  --text-h3: 22px;
+  --text-body: clamp(18px, 1.5vw, 19px);
+  --text-small: 15px;
+  --text-mono: 14px;
+  --text-mono-sm: 13px;
+  --text-mono-xs: 12px;
+
+  --leading-display: 1.05;
+  --leading-h1: 1.1;
+  --leading-h2: 1.2;
+  --leading-h3: 1.3;
+  --leading-body: 1.65;
+  --leading-small: 1.5;
+
+  /* espaço: múltiplos de 4 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* forma e layout */
+  --radius: 4px;
+  --radius-pill: 999px;
+  --layout-width: 1120px;
+  --reading-width: 680px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --tap-min: 44px;
+
+  color-scheme: light;
+}
+
+/* neutros · claro */
+:root,
+[data-theme="claro"] {
+  --bg: var(--color-paper);
+  --surface: #f2efe7;
+  --border: #e3ded2;
+  --muted: #5e5e66;
+  --text: var(--color-ink);
+  --link: #2557d6;
+  --code-kw: #6b4fd8;
+  --code-str: #157a52;
+  --code-fn: #c2401f;
+}
+
+/* neutros · escuro */
+[data-theme="escuro"] {
+  --bg: var(--color-ink);
+  --surface: #1c1d25;
+  --border: #2a2c36;
+  --muted: #a3a3ad;
+  --text: #eceae4;
+  --link: #6b9bff;
+  --code-kw: var(--tag-ideias);
+  --code-str: var(--tag-tecnologia);
+  --code-fn: var(--tag-trabalho);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="claro"]) {
+    --bg: var(--color-ink);
+    --surface: #1c1d25;
+    --border: #2a2c36;
+    --muted: #a3a3ad;
+    --text: #eceae4;
+    --link: #6b9bff;
+    --code-kw: var(--tag-ideias);
+    --code-str: var(--tag-tecnologia);
+    --code-fn: var(--tag-trabalho);
+    color-scheme: dark;
+  }
+}
+
+/* base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-link-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* layout: até 1120px, margem lateral 20px no celular */
+.shell {
+  box-sizing: content-box;
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* utilitários do sistema */
+
+/* rótulo de seção em mono: "// algo" */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--text-mono-sm);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* botão com contorno */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: 0 18px;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.btn:hover {
+  background: var(--surface);
+}
+
+/* linha de lista clicável: título sublinha no hover */
+.row {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.row:hover .row-t {
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* placeholder pontilhado */
+.dots {
+  background-color: var(--surface);
+  background-image: radial-gradient(var(--text) 0.8px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+/* link: texto na cor de link, sublinhado Céu elétrico */
+.lk {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.lk:hover {
+  color: var(--link);
+  text-decoration-thickness: 2px;
+}
+
+/* grifo: Ipê com texto Noite, nos dois modos. No máximo uma ou duas frases por texto. */
+.grifo {
+  background-image: linear-gradient(var(--color-highlight), var(--color-highlight));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--color-ink);
+  padding: 0 0.18em;
+  margin: 0 -0.04em;
+  border-radius: 3px 9px 4px 8px / 8px 3px 9px 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: grifo 0.4s ease-out 0.3s both;
+}
+
+@keyframes grifo {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+/* cursor piscando da assinatura */
+.cur {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cur,
+  .grifo {
+    animation: none;
+  }
+}

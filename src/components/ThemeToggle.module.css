@@ -1,0 +1,23 @@
+.toggle {
+  flex: none;
+  min-height: var(--tap-min);
+  padding: 12px 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  color: var(--text);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.escuro {
+  display: none;
+}
+
+:global([data-theme="escuro"]) .claro {
+  display: none;
+}
+
+:global([data-theme="escuro"]) .escuro {
+  display: inline;
+}
