@@ -14,3 +14,16 @@ npm run lint
 ```
 
 Veja [PROJECT.md](PROJECT.md) para stack e sistema visual.
+
+## Fluxo de git e deploy
+
+Todo o trabalho vai direto na `master`, sem branches. Pushes na `master` não publicam nada.
+
+O deploy de produção na Vercel sai de uma tag numérica:
+
+```bash
+git tag 0.1
+git push origin 0.1
+```
+
+O workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) confere se a tag está na `master`, roda o lint e publica com a CLI da Vercel. Ele precisa dos segredos `VERCEL_TOKEN`, `VERCEL_ORG_ID` e `VERCEL_PROJECT_ID` no GitHub.
